@@ -4,7 +4,7 @@ export type ContactPayload = {
   fullName: string;
   email: string;
   phone: string;
-  address?: string;
+  address?: string | undefined;
   subject: string;
   message: string;
 };
