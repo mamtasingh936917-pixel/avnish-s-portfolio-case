@@ -115,6 +115,20 @@ function Skills() {
   );
 }
 
+function LinkButton({ href, children }: { href: string; children: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="label-caps inline-flex items-center gap-2 border border-ink/40 bg-ink px-3 py-2 text-paper transition-colors hover:bg-seal"
+    >
+      {children}
+      <span aria-hidden>↗</span>
+    </a>
+  );
+}
+
 function Projects() {
   return (
     <div className="space-y-7">
@@ -129,6 +143,11 @@ function Projects() {
               <li key={point}>· {point}</li>
             ))}
           </ul>
+          {project.link ? (
+            <div className="mt-4">
+              <LinkButton href={project.link}>{project.linkLabel}</LinkButton>
+            </div>
+          ) : null}
         </article>
       ))}
     </div>
@@ -157,11 +176,22 @@ function Certifications() {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {CERTIFICATIONS.map((cert) => (
-        <article key={cert.title} className="relative border border-ink/20 p-4">
+        <article key={cert.title} className="relative flex flex-col border border-ink/20 p-4">
           <span className="absolute right-3 top-3 size-6 rounded-full border border-gold/70 bg-gold/20" aria-hidden />
-          <h3 className="font-display text-lg leading-tight text-ink">{cert.title}</h3>
-          <p className="label-caps mt-2 text-ink-soft">{cert.issuer}</p>
+          <h3 className="pr-8 font-display text-lg leading-tight text-ink">{cert.title}</h3>
+          <p className="label-caps mt-2 text-ink-soft">
+            {cert.issuer} · {cert.date}
+          </p>
           <p className="mt-2 text-sm leading-6 text-ink/85">{cert.detail}</p>
+          <div className="mt-4 pt-1">
+            {cert.url ? (
+              <LinkButton href={cert.url}>View Certificate</LinkButton>
+            ) : (
+              <span className="label-caps inline-block border border-dashed border-ink/30 px-3 py-2 text-ink-soft">
+                Available on request
+              </span>
+            )}
+          </div>
         </article>
       ))}
     </div>

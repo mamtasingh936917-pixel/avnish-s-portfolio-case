@@ -52,137 +52,110 @@ export const ABOUT_HIGHLIGHTS = [
 
 export const EDUCATION = [
   {
-    period: "2023 — 2027",
-    title: "B.Tech, Computer Science & Engineering",
+    period: "Aug 2026 — Present",
+    title: "Bachelor of Technology — Computer Science & Engineering",
     specialisation: "Specialization: Artificial Intelligence & Machine Learning",
-    institution: "Lovely Professional University, Punjab",
+    institution: "Lovely Professional University, Phagwara, Punjab",
     detail: "CGPA: 7.60",
     notes: [
-      "Core coursework: Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks",
-      "Specialization coursework: Machine Learning, Deep Learning, Data Science foundations",
+      "Core coursework: Data Structures, DBMS, Operating Systems, Computer Networks",
+      "Specialization coursework: Artificial Intelligence, Machine Learning fundamentals",
     ],
   },
   {
-    period: "Completed",
-    title: "Senior Secondary (Class XII)",
-    specialisation: "Science stream — Physics, Chemistry, Mathematics",
-    institution: "CBSE",
-    detail: "Foundation in mathematics and analytical reasoning",
-    notes: ["Early interest in programming and computer fundamentals"],
+    period: "2024",
+    title: "Intermediate (Class XII)",
+    specialisation: "Percentage: 73",
+    institution: "Universal Public School, Deoria, Uttar Pradesh",
+    detail: "Senior secondary education",
+    notes: ["Built the mathematics and reasoning base for engineering study"],
+  },
+  {
+    period: "2022",
+    title: "Matriculation (Class X)",
+    specialisation: "Percentage: 82",
+    institution: "Universal Public School, Deoria, Uttar Pradesh",
+    detail: "Secondary education",
+    notes: ["First exposure to computers and programming"],
   },
 ];
 
 export const SKILL_GROUPS = [
   {
-    heading: "Programming Languages",
-    items: ["Python", "C / C++", "Java", "JavaScript", "SQL"],
+    heading: "Languages",
+    items: ["C", "Python", "C++"],
   },
   {
-    heading: "AI / Machine Learning",
-    items: ["NumPy", "Pandas", "Scikit-learn", "TensorFlow basics", "Data preprocessing", "Model evaluation"],
+    heading: "Technologies",
+    items: ["HTML", "CSS", "JavaScript"],
   },
   {
-    heading: "Web Development",
-    items: ["HTML5", "CSS3", "React", "Tailwind CSS", "Node.js basics", "REST APIs"],
+    heading: "Databases / Tools",
+    items: ["MySQL", "Git", "GitHub"],
   },
   {
-    heading: "Tools & Platforms",
-    items: ["Git & GitHub", "VS Code", "Jupyter Notebook", "Google Colab", "Figma basics"],
-  },
-  {
-    heading: "Core Concepts",
-    items: ["Data Structures & Algorithms", "OOP", "DBMS", "Operating Systems", "Problem Solving"],
+    heading: "Soft Skills",
+    items: ["Problem Solving", "Team Collaboration", "Time Management", "Adaptability"],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "Machine Learning Prediction System",
-    stack: "Python · Scikit-learn · Pandas · Matplotlib",
+    title: "Water Quality Index Calculator",
+    stack:
+      "HTML · CSS · JavaScript · Chart.js · FastAPI / Python · PostgreSQL · SQLAlchemy · CSV Processing · Vercel",
+    link: "https://github.com/AvnishSingh-R",
+    linkLabel: "View on GitHub",
     summary:
-      "A supervised learning pipeline that cleans raw tabular data, engineers features, trains multiple candidate models and reports comparative accuracy metrics.",
+      "A website that analyses water quality using important parameters such as pH, Dissolved Oxygen (DO) and BOD. These values help determine the overall condition of water and provide useful information about its quality through a simple and systematic analysis process.",
     points: [
-      "End-to-end pipeline from raw dataset to evaluated model",
-      "Model comparison with accuracy, precision and recall reporting",
-      "Reusable preprocessing utilities for future experiments",
-    ],
-  },
-  {
-    title: "Responsive Web Application",
-    stack: "React · Tailwind CSS · REST API",
-    summary:
-      "A component-driven front-end application with clean state handling, accessible forms and a fully responsive layout across devices.",
-    points: [
-      "Reusable component library and consistent design tokens",
-      "Form validation with clear user feedback",
-      "Optimised rendering and mobile-first layout",
-    ],
-  },
-  {
-    title: "Data Analysis & Visualisation Study",
-    stack: "Python · Pandas · Seaborn · Jupyter",
-    summary:
-      "An exploratory analysis notebook that turns a raw dataset into readable insight through statistical summaries and clear visual storytelling.",
-    points: [
-      "Data cleaning, outlier handling and correlation study",
-      "Chart set designed for non-technical readers",
-      "Documented findings and conclusions",
-    ],
-  },
-  {
-    title: "Academic Utility Tool",
-    stack: "Java / Python · SQL",
-    summary:
-      "A small practical tool built to solve a real day-to-day academic problem, with persistent storage and a simple, predictable interface.",
-    points: [
-      "CRUD operations backed by a relational schema",
-      "Input validation and error handling",
-      "Built during coursework and iterated after feedback",
+      "Calculates the Water Quality Index (WQI) by combining different water-quality parameters with assigned weights, producing an overall score that is easy to understand, compare and evaluate across samples",
+      "Interactive dashboard where users enter water-quality parameters and view calculated results in an organised format, making assessment faster and easier",
+      "Supports CSV file uploads for structured data entry, plus computation-log export for future reference, documentation and further analysis",
     ],
   },
 ];
 
 export const ACHIEVEMENTS = [
   {
-    title: "Hackathon Participation",
+    title: "Webathon 2.0 — Top 25 of 100 Teams",
     detail:
-      "Took part in inter-college and university-level hackathons, building working prototypes within strict time limits as part of a small team.",
+      "Participated in Webathon 2.0, a university-organised hackathon, and ranked among the top 25 teams out of 100 teams.",
   },
   {
-    title: "Consistent Academic Standing",
-    detail: "Maintaining a CGPA of 7.60 in B.Tech CSE (AI & ML) at Lovely Professional University.",
-  },
-  {
-    title: "Coding Practice Milestones",
+    title: "Code-A-Thone — Top 10 of 70 Teams",
     detail:
-      "Regular problem solving across data structures and algorithms platforms, with steady improvement in contest performance.",
-  },
-  {
-    title: "Technical Events & Workshops",
-    detail:
-      "Attended and contributed to university technical sessions on artificial intelligence, machine learning and modern web development.",
+      "Participated in Code-A-Thone, a university-organised hackathon, and ranked among the top 10 teams out of 70 teams.",
   },
 ];
 
 export const CERTIFICATIONS = [
   {
-    title: "Machine Learning Foundations",
-    issuer: "Online learning platform",
-    detail: "Supervised and unsupervised learning, model evaluation, practical assignments.",
+    title: "Object Oriented Programming (C++)",
+    issuer: "Infosys Springboard",
+    date: "Feb 2026",
+    detail: "Classes and objects, inheritance, polymorphism and problem solving in C++.",
+    url: "https://infyspringboard.onwingspan.com/",
   },
   {
-    title: "Python Programming",
-    issuer: "Online learning platform",
-    detail: "Core language, data handling with NumPy and Pandas, scripting practice.",
+    title: "Introduction to AI",
+    issuer: "Infosys Springboard",
+    date: "Mar 2026",
+    detail: "Foundations of artificial intelligence, core concepts and practical applications.",
+    url: "https://infyspringboard.onwingspan.com/",
   },
   {
-    title: "Web Development Essentials",
-    issuer: "Online learning platform",
-    detail: "HTML, CSS, JavaScript and responsive front-end development.",
+    title: "Healthy Habits for Healthy Life",
+    issuer: "Edutech Hub",
+    date: "Oct 2026",
+    detail: "Personal effectiveness, routine building and well-being fundamentals.",
+    url: "",
   },
   {
-    title: "Database Management Systems",
-    issuer: "University coursework certification",
-    detail: "Relational design, normalisation and SQL querying.",
+    title: "Generative AI Mastermind",
+    issuer: "Outskill",
+    date: "Sep 2025",
+    detail: "Generative AI tooling, prompting workflows and applied use cases.",
+    url: "https://www.outskill.com/",
   },
 ];
