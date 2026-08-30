@@ -1,0 +1,18 @@
+CREATE TABLE public.contact_messages (
+  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  address TEXT,
+  subject TEXT NOT NULL,
+  message TEXT NOT NULL,
+  ip_hash TEXT,
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
+);
+
+GRANT ALL ON public.contact_messages TO service_role;
+
+ALTER TABLE public.contact_messages ENABLE ROW LEVEL SECURITY;
+
+CREATE INDEX contact_messages_created_at_idx ON public.contact_messages (created_at DESC);
+CREATE INDEX contact_messages_ip_hash_idx ON public.contact_messages (ip_hash, created_at DESC);
