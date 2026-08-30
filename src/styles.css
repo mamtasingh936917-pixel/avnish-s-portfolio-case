@@ -175,5 +175,162 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(circle at 20% 0%, oklch(0.4 0.03 258 / 0.85), transparent 60%),
+      radial-gradient(circle at 85% 100%, oklch(0.36 0.04 268 / 0.7), transparent 55%);
+    background-attachment: fixed;
+  }
+}
+
+/* ---------- Paper & envelope surfaces ---------- */
+
+@utility paper-sheet {
+  background-color: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-paper);
+  background-image:
+    linear-gradient(to bottom, oklch(1 0 0 / 0.5), transparent 12%),
+    radial-gradient(circle at 12% 8%, oklch(0.86 0.03 82 / 0.35), transparent 45%),
+    radial-gradient(circle at 88% 92%, oklch(0.86 0.03 82 / 0.3), transparent 40%);
+  position: relative;
+}
+
+@utility paper-grain {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image:
+      repeating-linear-gradient(0deg, oklch(0.8 0.02 84 / 0.12) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(90deg, oklch(0.8 0.02 84 / 0.08) 0 1px, transparent 1px 5px);
+  }
+}
+
+@utility ruled-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 27px,
+    oklch(0.72 0.045 246 / 0.25) 27px 28px
+  );
+}
+
+@utility paper-edge-torn {
+  clip-path: polygon(
+    0% 1%,
+    100% 0%,
+    99.6% 99%,
+    0.4% 100%
+  );
+}
+
+@utility desk-frame {
+  background:
+    linear-gradient(160deg, var(--kraft) 0%, var(--kraft-dark) 100%);
+  box-shadow: var(--shadow-envelope), inset 0 1px 0 oklch(1 0 0 / 0.35);
+}
+
+@utility hand-note {
+  font-family: var(--font-hand);
+  color: var(--ink-soft);
+}
+
+@utility label-caps {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes sheet-slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(46px) scale(0.9) rotate(-1.4deg);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.01) rotate(0.4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes sheet-slide-in {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.88) rotate(-1.2deg);
+  }
+}
+
+@keyframes flap-open {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-172deg);
+  }
+}
+
+@keyframes fade-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ink-in {
+  0% {
+    opacity: 0;
+    filter: blur(6px);
+    letter-spacing: 0.4em;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@utility animate-sheet-out {
+  animation: sheet-slide-out 0.72s cubic-bezier(0.16, 0.9, 0.24, 1) both;
+}
+
+@utility animate-sheet-in {
+  animation: sheet-slide-in 0.42s cubic-bezier(0.5, 0, 0.85, 0.35) both;
+}
+
+@utility animate-fade-rise {
+  animation: fade-rise 0.6s ease-out both;
+}
+
+@utility animate-ink-in {
+  animation: ink-in 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@utility flap-opened {
+  animation: flap-open 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
