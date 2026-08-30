@@ -79,8 +79,26 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --radius: 0.25rem;
+
+  /* Physical portfolio palette */
+  --paper: oklch(0.965 0.014 88);
+  --paper-edge: oklch(0.9 0.02 85);
+  --ink: oklch(0.28 0.035 250);
+  --ink-soft: oklch(0.48 0.022 250);
+  --kraft: oklch(0.78 0.055 75);
+  --kraft-dark: oklch(0.66 0.06 68);
+  --kraft-flap: oklch(0.72 0.058 72);
+  --seal: oklch(0.46 0.16 22);
+  --gold: oklch(0.72 0.1 82);
+  --desk: oklch(0.31 0.028 258);
+
+  --shadow-paper: 0 1px 2px oklch(0.2 0.03 258 / 0.18), 0 14px 30px -12px oklch(0.2 0.03 258 / 0.35);
+  --shadow-paper-lift:
+    0 2px 4px oklch(0.2 0.03 258 / 0.2), 0 40px 70px -24px oklch(0.15 0.03 258 / 0.55);
+  --shadow-envelope: 0 1px 1px oklch(0.2 0.03 258 / 0.25), 0 18px 28px -18px oklch(0.15 0.03 258 / 0.6);
+
+  --background: var(--desk);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
